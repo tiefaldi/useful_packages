@@ -1,3 +1,20 @@
+#!/bin/bash
+
+ECHO INFRASTRUCTURE PACKAGE / NETWORKS
+
+	apt-get update -y
+	apt-get install -y apt-utils
+	apt-get install dnsutils -y
+	apt-get install tcpdump -y
+	apt-get install telnet -y
+	apt-get install zip -y
+	apt-get install wget -y
+	apt-get install curl -y
+	apt-get install vim -y
+	apt-get alien -y
+	apt-get install libaio1 -y
+
+
 echo INFRASTRUCTURE PACKAGE / SQLPLUS
 
 	mkdir -p /tmp/oracle
