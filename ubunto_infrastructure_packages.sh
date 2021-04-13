@@ -23,10 +23,11 @@ echo INFRASTRUCTURE PACKAGE / SQLPLUS
 	wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-basic-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
-	echo alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus' > ~/.bashrc
+	echo "alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus' " >> ~/.bashrc
 	alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus'
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
-	chmod -R 755 /tmp/oracle 
+	#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
+	chmod -R 755 /tmp/oracle
+	ldconfig
 
 
 #IF YOU WANT TO ADD IN THE VARIABLES
