@@ -23,6 +23,7 @@ echo INFRASTRUCTURE PACKAGE / SQLPLUS
 	wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-basic-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
 	alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus'
 
 
@@ -35,7 +36,5 @@ echo INFRASTRUCTURE PACKAGE / SQLPLUS
 	# export ORACLE_HOME
 	# export LD_LIBRARY_PATH
 	# export PATH
-
-	# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
 
 echo FINISHED INSTALLATIONS...
