@@ -11,7 +11,7 @@ echo INFRASTRUCTURE PACKAGE / NETWORKS
 	apt-get install wget -y
 	apt-get install curl -y
 	apt-get install vim -y
-	apt-get alien -y
+	apt-get install alien -y
 	apt-get install libaio1 libaio-dev -y
 
 
