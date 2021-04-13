@@ -15,20 +15,27 @@ ECHO INFRASTRUCTURE PACKAGE / NETWORKS
 
 
 ECHO INFRASTRUCTURE PACKAGE / SQLPLUS
+
 	
-	mkdir -p /opt/oracle
-	cd /opt/oracle
+	mkdir -p /tmp/oracle
+	cd /tmp/oracle
 	wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
 	wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-basic-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
-	export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1/
-	ORACLE_HOME=/opt/oracle/instantclient_21_1/
-	PATH=$ORACLE_HOME/bin:$PATH
-	LD_LIBRARY_PATH=$ORACLE_HOME/lib
-	export ORACLE_HOME
-	export LD_LIBRARY_PATH
-	export PATH
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
+	echo 'alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus" ' >> ~/.bashrc
+
+
+#IF YOU WANT TO ADD IN THE VARIABLES
+
+	# export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1/
+	# ORACLE_HOME=/opt/oracle/instantclient_21_1/
+	# PATH=$ORACLE_HOME/bin:$PATH
+	# LD_LIBRARY_PATH=$ORACLE_HOME/lib
+	# export ORACLE_HOME
+	# export LD_LIBRARY_PATH
+	# export PATH
+
+	# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
 
 ECHO FINISHED INSTALLATIONS...
