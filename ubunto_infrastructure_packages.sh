@@ -26,6 +26,7 @@ echo INFRASTRUCTURE PACKAGE / SQLPLUS
 	echo alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus' > ~/.bashrc
 	alias sqlplus='cd /tmp/oracle/instantclient_21_1 && ./sqlplus'
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
+	chmod -R 755 /tmp/oracle 
 
 
 #IF YOU WANT TO ADD IN THE VARIABLES
