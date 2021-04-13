@@ -23,7 +23,7 @@ echo INFRASTRUCTURE PACKAGE / SQLPLUS
 	wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-basic-linux.x64-21.1.0.0.0.zip
 	unzip -o instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
-	echo 'alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus" ' >> ~/.bashrc
+	echo 'alias sqlplus="cd /tmp/oracle/instantclient_21_1/ && ./sqlplus" ' >> ~/.bashrc
 
 
 #IF YOU WANT TO ADD IN THE VARIABLES
