@@ -20,5 +20,3 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1/
 alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus"
 echo 'alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus" ' >> ~/.bashrc
 
-apt-get update -y
-
