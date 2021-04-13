@@ -17,5 +17,6 @@ wget https://download.oracle.com/otn_software/linux/instantclient/211000/instant
 unzip instantclient-basic-linux.x64-21.1.0.0.0.zip
 unzip instantclient-sqlplus-linux.x64-21.1.0.0.0.zip
 export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_1/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME
 alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus"
 echo 'alias sqlplus="cd /opt/oracle/instantclient_21_1/ && ./sqlplus" ' >> ~/.bashrc
