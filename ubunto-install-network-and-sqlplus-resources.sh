@@ -3,7 +3,8 @@
 ECHO INFRASTRUCTURE PACKAGE / NETWORKS
 
 	apt-get update -y
-	apt-get install -y apt-utils
+	apt-get install apt-utils -y
+	apt-get install iputils-ping -y
 	apt-get install dnsutils -y
 	apt-get install tcpdump -y
 	apt-get install telnet -y
