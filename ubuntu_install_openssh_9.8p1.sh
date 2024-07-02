@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Atualiza a lista de pacotes disponíveis e suas versões
-sudo apt update
+sudo apt update -y
 
 # Atualiza todos os pacotes instalados para as versões mais recentes
 sudo apt upgrade -y
