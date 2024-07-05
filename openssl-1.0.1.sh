@@ -36,6 +36,10 @@ echo "Creating symbolic links for libssl and libcrypto..."
 sudo ln -sf /usr/local/ssl/lib/libssl.so.1.0.1 /usr/lib/libssl.so.1.0.1
 sudo ln -sf /usr/local/ssl/lib/libcrypto.so.1.0.1 /usr/lib/libcrypto.so.1.0.1
 
+# Add OpenSSL 1.0.1 to the PATH
+echo 'export PATH="/usr/local/ssl/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
 # Verify the installation
 echo "Verifying the installation..."
 openssl version
