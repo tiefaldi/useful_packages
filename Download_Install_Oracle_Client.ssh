@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Define as URLs diretas dos pacotes Instant Client do Oracle
+INSTANTCLIENT_BASIC_URL="https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/linux/instantclient/122010/instantclient-basic-linux.x64-12.2.0.1.0.zip"
+INSTANTCLIENT_SQLPLUS_URL="https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/linux/instantclient/122010/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip"
+
+# Define o diretório de destino para extração
+INSTALL_DIR="/opt/oracle/instantclient"
+
+# Cria o diretório se não existir
+mkdir -p $INSTALL_DIR
+cd $INSTALL_DIR
+
+# Baixa os pacotes do Instant Client do Oracle usando wget com cabeçalho aceitando termos de serviço
+echo "Baixando o Oracle Instant Client..."
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O instantclient-basic-linux.x64-12.2.0.1.0.zip "$INSTANTCLIENT_BASIC_URL"
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O instantclient-sqlplus-linux.x64-12.2.0.1.0.zip "$INSTANTCLIENT_SQLPLUS_URL"
+
+# Extrai os arquivos baixados
+echo "Extraindo os arquivos..."
+unzip instantclient-basic-linux.x64-12.2.0.1.0.zip
+unzip instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+
+# Remove os arquivos zip após extração
+rm instantclient-basic-linux.x64-12.2.0.1.0.zip
+rm instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+
+# Define as variáveis de ambiente necessárias
+echo "Configurando as variáveis de ambiente..."
+echo "export ORACLE_HOME=$INSTALL_DIR/instantclient_12_2" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=$INSTALL_DIR/instantclient_12_2" >> ~/.bashrc
+echo "export PATH=$PATH:$INSTALL_DIR/instantclient_12_2" >> ~/.bashrc
+
+# Carrega as variáveis de ambiente
+source ~/.bashrc
+
+echo "Instalação concluída!"
+echo "Você pode agora usar o Oracle Instant Client no seu sistema."
